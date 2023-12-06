@@ -1,0 +1,79 @@
+{
+  "id": "4361819",
+  "name": "todoList",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "todolist项目图标库",
+  "glyphs": [
+    {
+      "icon_id": "695898",
+      "name": "清单",
+      "font_class": "project",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "6338134",
+      "name": "标签",
+      "font_class": "envelope",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "7254138",
+      "name": "最近7天收益",
+      "font_class": "week",
+      "unicode": "e66d",
+      "unicode_decimal": 58989
+    },
+    {
+      "icon_id": "7587956",
+      "name": "垃圾桶",
+      "font_class": "trash",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "8709327",
+      "name": "放弃",
+      "font_class": "abandon",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "10691038",
+      "name": "任务",
+      "font_class": "task",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "11252739",
+      "name": "今天",
+      "font_class": "today",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "15100789",
+      "name": "收集箱",
+      "font_class": "inbox",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "34514964",
+      "name": "已完成",
+      "font_class": "completed",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "13638698",
+      "name": "优先级",
+      "font_class": "priority",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    }
+  ]
+}
