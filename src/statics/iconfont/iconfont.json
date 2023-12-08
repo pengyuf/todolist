@@ -6,6 +6,13 @@
   "description": "todolist项目图标库",
   "glyphs": [
     {
+      "icon_id": "1272131",
+      "name": "操作-更多",
+      "font_class": "opt",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
       "icon_id": "695898",
       "name": "清单",
       "font_class": "project",

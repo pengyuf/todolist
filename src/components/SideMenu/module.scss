@@ -1,0 +1,39 @@
+@import '@/styles/index';
+
+.side-menu-box {
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-right: 1px solid rgba($color: $t-grey, $alpha: 0.1);
+}
+
+$menuItemWidth: 250px;
+$menuItemPadding: 10px;
+
+.menu-item {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    width: $menuItemWidth;
+    background-color: rgba(255, 0, 0, 0.1);
+    padding: $menuItemPadding;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-radius: 4px;
+
+    .item-left {
+        display: flex;
+        align-items: center;
+
+        .menu-icon {
+            font-size: 18px;
+            margin-right: 4px;
+        }
+
+        .item-label {
+            color: $t-grey;
+        }
+    }
+
+    .item-right {}
+}
