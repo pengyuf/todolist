@@ -1,10 +1,40 @@
+import { useState } from "react";
+import Popover from "../Popover";
 import "./module.scss";
+import { NavLink } from "react-router-dom";
 
 export default function SideMenu({ showSideMenu }) {
+  const [visible, setVisible] = useState(false);
+  const [top, setTop] = useState(0);
+  const [left, setLeft] = useState(0);
+
+  const rightMenus = [
+    { label: "有内容时显示", value: "contentShow" },
+    { label: "隐藏", value: "hide" },
+  ];
+
   const defaultMenus = [
-    { label: "今天", value: "today", nums: 0, icon: "icon-today" },
-    { label: "最近7天", value: "week", nums: 0, icon: "icon-week" },
-    { label: "收集箱", value: "inbox", nums: 0, icon: "icon-inbox" },
+    {
+      label: "今天",
+      value: "today",
+      nums: 0,
+      icon: "icon-today",
+      path: "today",
+    },
+    {
+      label: "最近7天",
+      value: "week",
+      nums: 0,
+      icon: "icon-week",
+      path: "week",
+    },
+    {
+      label: "收集箱",
+      value: "inbox",
+      nums: 0,
+      icon: "icon-inbox",
+      path: "inbox",
+    },
   ];
 
   const projectMenus = [
@@ -20,7 +50,7 @@ export default function SideMenu({ showSideMenu }) {
       value: "p2",
       nums: 0,
       icon: "icon-project",
-      color: "red",
+      color: "green",
     },
   ];
 
@@ -62,49 +92,21 @@ export default function SideMenu({ showSideMenu }) {
     },
   ];
 
-  // 右击
+  // 右击打开菜单
   function mouseRightClick(e) {
     e.preventDefault();
-    // 创建自定义的菜单
-    var customMenu = document.getElementById("customMenu");
-    if (!customMenu) {
-      customMenu = document.createElement("div");
-      customMenu.id = "customMenu";
-      customMenu.style.position = "fixed";
-      customMenu.style.zIndex = 1000;
-      customMenu.style.padding = "10px";
-      customMenu.style.backgroundColor = "#f0f0f0";
-      customMenu.style.border = "1px solid #ccc";
-
-      var item1 = document.createElement("button");
-      item1.innerHTML = "选项一";
-      item1.onclick = function () {
-        alert("你选择了选项一！");
-        customMenu.style.display = "none";
-      };
-      customMenu.appendChild(item1);
-
-      var item2 = document.createElement("button");
-      item2.innerHTML = "选项二";
-      item2.onclick = function () {
-        alert("你选择了选项二！");
-        customMenu.style.display = "none";
-      };
-      customMenu.appendChild(item2);
-
-      document.body.appendChild(customMenu);
-    }
-
-    customMenu.style.display = "block";
-    customMenu.style.left = e.clientX + "px";
-    customMenu.style.top = e.clientY + "px";
-
+    setLeft(e.clientX);
+    setTop(e.clientY);
+    setVisible(true);
     // 当点击其它地方时关闭菜单
     document.addEventListener("click", function (event) {
-      if (customMenu && !customMenu.contains(event.target)) {
-        customMenu.style.display = "none";
-      }
+      setVisible(false);
     });
+  }
+
+  // 悬浮的菜单项
+  function floatMenuClick(item) {
+    console.log(item);
   }
 
   return (
@@ -112,22 +114,38 @@ export default function SideMenu({ showSideMenu }) {
       className="side-menu-box"
       style={{ display: showSideMenu ? "block" : "none" }}
     >
+      <Popover visible={visible} top={top} left={left}>
+        <div className="float-menu-box">
+          {rightMenus.map((item) => (
+            <div
+              onClick={() => floatMenuClick(item)}
+              className="float-menu-item"
+              key={item.value}
+            >
+              {item.label}
+            </div>
+          ))}
+        </div>
+      </Popover>
       <div className="card-box">
         <div className="card-body">
           {defaultMenus.map((item) => (
-            <div
-              key={item.value}
-              className="menu-item"
-              onContextMenu={(e) => mouseRightClick(e)}
-            >
-              <div className="item-left">
-                <div className={`iconfont ${item.icon} menu-icon`}></div>
-                <div className="item-label">{item.label}</div>
-              </div>
-              <div className="item-right">
-                <div className="item-nums">4</div>
-                <div className="iconfont icon-opt right-icon"></div>
-              </div>
+            <div key={item.value} onContextMenu={(e) => mouseRightClick(e)}>
+              <NavLink
+                to={`${item.path}`}
+                className={({ isActive }) =>
+                  isActive ? "menu-item active-menu" : "menu-item"
+                }
+              >
+                <div className="item-left">
+                  <div className={`iconfont ${item.icon} menu-icon`}></div>
+                  <div className="item-label">{item.label}</div>
+                </div>
+                <div className="item-right">
+                  <div className="item-nums">4</div>
+                  <div className="iconfont icon-opt right-icon"></div>
+                </div>
+              </NavLink>
             </div>
           ))}
         </div>
@@ -137,19 +155,26 @@ export default function SideMenu({ showSideMenu }) {
         <div className="card-title">清单</div>
         <div className="card-body">
           {projectMenus.map((item) => (
-            <div
-              key={item.value}
-              className="menu-item"
-              onContextMenu={(e) => mouseRightClick(e)}
-            >
-              <div className="item-left">
-                <div className={`iconfont ${item.icon} menu-icon`}></div>
-                <div className="item-label">{item.label}</div>
-              </div>
-              <div className="item-right">
-                <div className="item-nums">4</div>
-                <div className="iconfont icon-opt right-icon"></div>
-              </div>
+            <div key={item.value} onContextMenu={(e) => mouseRightClick(e)}>
+              <NavLink
+                to={`project/${item.value}`}
+                className={({ isActive }) =>
+                  isActive ? "menu-item active-menu" : "menu-item"
+                }
+              >
+                <div className="item-left">
+                  <div className={`iconfont ${item.icon} menu-icon`}></div>
+                  <div className="item-label">{item.label}</div>
+                </div>
+                <div className="item-right">
+                  <div
+                    className="rounded"
+                    style={{ backgroundColor: item.color }}
+                  ></div>
+                  <div className="item-nums">4</div>
+                  <div className="iconfont icon-opt right-icon"></div>
+                </div>
+              </NavLink>
             </div>
           ))}
         </div>
@@ -157,39 +182,44 @@ export default function SideMenu({ showSideMenu }) {
         <div className="card-title">标签</div>
         <div className="card-body">
           {envelopeMenus.map((item) => (
-            <div
-              key={item.value}
-              className="menu-item"
-              onContextMenu={(e) => mouseRightClick(e)}
-            >
-              <div className="item-left">
-                <div className={`iconfont ${item.icon} menu-icon`}></div>
-                <div className="item-label">{item.label}</div>
-              </div>
-              <div className="item-right">
-                <div className="item-nums">4</div>
-                <div className="iconfont icon-opt right-icon"></div>
-              </div>
+            <div key={item.value} onContextMenu={(e) => mouseRightClick(e)}>
+              <NavLink
+                to={`envelope/${item.value}`}
+                className={({ isActive }) =>
+                  isActive ? "menu-item active-menu" : "menu-item"
+                }
+              >
+                <div className="item-left">
+                  <div className={`iconfont ${item.icon} menu-icon`}></div>
+                  <div className="item-label">{item.label}</div>
+                </div>
+                <div className="item-right">
+                  <div className="item-nums">4</div>
+                  <div className="iconfont icon-opt right-icon"></div>
+                </div>
+              </NavLink>
             </div>
           ))}
         </div>
       </div>
-
       <div className="card-box">
         <div className="card-body">
           {statusMenus.map((item) => (
-            <div
-              key={item.value}
-              className="menu-item"
-              onContextMenu={(e) => mouseRightClick(e)}
-            >
-              <div className="item-left">
-                <div className={`iconfont ${item.icon} menu-icon`}></div>
-                <div className="item-label">{item.label}</div>
-              </div>
-              <div className="item-right">
-                <div className="iconfont icon-opt right-icon"></div>
-              </div>
+            <div key={item.value} onContextMenu={(e) => mouseRightClick(e)}>
+              <NavLink
+                to={`envelope/${item.value}`}
+                className={({ isActive }) =>
+                  isActive ? "menu-item active-menu" : "menu-item"
+                }
+              >
+                <div className="item-left">
+                  <div className={`iconfont ${item.icon} menu-icon`}></div>
+                  <div className="item-label">{item.label}</div>
+                </div>
+                <div className="item-right">
+                  <div className="iconfont icon-opt right-icon"></div>
+                </div>
+              </NavLink>
             </div>
           ))}
         </div>

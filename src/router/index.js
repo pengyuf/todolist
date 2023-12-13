@@ -29,17 +29,17 @@ const router = createBrowserRouter([
             },
             // 自定义清单
             {
-                path: "project",
+                path: "project/:projectId",
                 element: <Project />,
             },
             // 自定义标签
             {
-                path: "envelope",
+                path: "envelope/:envelopeId",
                 element: <Project />,
             },
             // 状态任务
             {
-                path: "/status",
+                path: "/status/:statusType",
                 element: <Status />,
             },
         ]
