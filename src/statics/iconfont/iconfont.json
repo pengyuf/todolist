@@ -6,6 +6,34 @@
   "description": "todolist项目图标库",
   "glyphs": [
     {
+      "icon_id": "18444820",
+      "name": "日历",
+      "font_class": "rili",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "13034458",
+      "name": "下",
+      "font_class": "xia",
+      "unicode": "e730",
+      "unicode_decimal": 59184
+    },
+    {
+      "icon_id": "7450639",
+      "name": "收缩",
+      "font_class": "shousuo",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "38574326",
+      "name": "收缩-copy",
+      "font_class": "open",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
       "icon_id": "1272131",
       "name": "操作-更多",
       "font_class": "opt",

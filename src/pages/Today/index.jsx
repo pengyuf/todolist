@@ -1,7 +1,9 @@
+import TaskListWrapper from "@/components/TaskListWrapper";
+
 export default function Today() {
   return (
     <div>
-      <h1>Today</h1>
+      <TaskListWrapper></TaskListWrapper>
     </div>
   );
 }

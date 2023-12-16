@@ -47,6 +47,13 @@
     .menu-wrapper {}
 
     .content-wrapper {
+        padding: 10px;
+        box-sizing: border-box;
         flex: 1;
+        border-right: 1px solid rgba($color: $t-grey, $alpha: 0.1);
+    }
+
+    .right-wrapper {
+        width: 35%;
     }
 }

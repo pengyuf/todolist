@@ -3,6 +3,7 @@ import "./module.scss";
 import { Tooltip, ConfigProvider } from "antd";
 import SideMenu from "@/components/SideMenu";
 import { useState } from "react";
+import TextareaWrapper from "@/components/TextareaWrapper";
 
 export default function Home() {
   const [showSideMenu, setShowSideMenu] = useState(true);
@@ -11,7 +12,10 @@ export default function Home() {
 
   const sideItems = sideList.map((item) => (
     <Tooltip title={item.label} placement="right" key={item.value}>
-      <div className={`iconfont ${item.icon} side-icon`} onClick={()=>setShowSideMenu(!showSideMenu)}></div>
+      <div
+        className={`iconfont ${item.icon} side-icon`}
+        onClick={() => setShowSideMenu(!showSideMenu)}
+      ></div>
     </Tooltip>
   ));
 
@@ -38,6 +42,9 @@ export default function Home() {
         </div>
         <div className="content-wrapper">
           <Outlet />
+        </div>
+        <div className="right-wrapper">
+          <TextareaWrapper></TextareaWrapper>
         </div>
       </div>
     </ConfigProvider>

@@ -1,3 +1,4 @@
+import Envelope from "@/pages/Envelope";
 import Home from "@/pages/Home";
 import Inbox from "@/pages/Inbox";
 import Project from "@/pages/Project";
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
             // 自定义标签
             {
                 path: "envelope/:envelopeId",
-                element: <Project />,
+                element: <Envelope />,
             },
             // 状态任务
             {
