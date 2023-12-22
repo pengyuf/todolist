@@ -1,47 +1,87 @@
-import Envelope from "@/pages/Envelope";
-import Home from "@/pages/Home";
-import Inbox from "@/pages/Inbox";
-import Project from "@/pages/Project";
-import Status from "@/pages/Status";
-import Today from "@/pages/Today";
-import Week from "@/pages/Week";
+import Index from "@/pages/Index";
+
+
+import Task from "@/pages/Task";
+import Calendar from "@/pages/Calendar";
+import Quadrant from "@/pages/Quadrant";
+import Focus from "@/pages/Focus";
+import ClockIn from "@/pages/ClockIn";
+import Today from "@/pages/Task/Today";
+import Week from "@/pages/Task/Week";
+import Indox from "@/pages/Task/Inbox";
+import Project from "@/pages/Task/Project";
+import TagList from "@/pages/Task/TagList";
+import StatusList from "@/pages/Task/StatusList";
+import Tomorrow from "@/pages/Task/Tomorrow";
+import AllList from "@/pages/Task/AllList";
+import Summary from "@/pages/Task/Summary";
+
 
 const { createBrowserRouter } = require("react-router-dom");
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Home />,
+        element: <Index />,
         children: [
-            // 今天
             {
-                path: "today",
-                element: <Today />,
+                path: 'task',
+                element: <Task />,
+                children: [
+                    {
+                        path: "today",
+                        element: <Today />
+                    },
+                    {
+                        path: "tomorrow",
+                        element: <Tomorrow />
+                    },
+                    {
+                        path: "week",
+                        element: <Week />
+                    },
+                    {
+                        path: "all",
+                        element: <AllList />
+                    },
+                    {
+                        path: "inbox",
+                        element: <Indox />
+                    },
+                    {
+                        path: "summary",
+                        element: <Summary />
+                    },
+                    {
+                        path: "project/:projectId",
+                        element: <Project />
+                    },
+                    {
+                        path: "tag/:tagId",
+                        element: <TagList />
+                    },
+                    {
+                        path: "status/:statusType",
+                        element: <StatusList />
+                    },
+
+                ]
             },
-            // 近7天
             {
-                path: "week",
-                element: <Week />,
+                path: 'calendar',
+                element: <Calendar />
             },
-            // 收集箱
             {
-                path: "inbox",
-                element: <Inbox />,
+                path: 'quadrant',
+                element: <Quadrant />
             },
-            // 自定义清单
             {
-                path: "project/:projectId",
-                element: <Project />,
+                path: 'focus',
+                element: <Focus />
             },
-            // 自定义标签
             {
-                path: "envelope/:envelopeId",
-                element: <Envelope />,
-            },
-            // 状态任务
-            {
-                path: "/status/:statusType",
-                element: <Status />,
+                path: 'clockIn',
+                element: <ClockIn />
             },
         ]
     }

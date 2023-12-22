@@ -1,11 +1,16 @@
+import CheckBox from "../CheckBox";
+import Tag from "../Tag";
 import "./module.scss";
 
 export default function TaskListWrapper() {
+  function checkClick(status) {
+    console.log("checkClick", status);
+  }
+
   return (
     <div className="task-list-wrapper">
       <div className="opt-box">
         <div className="opt-left">
-          <div className="iconfont icon-shousuo left-icon"></div>
           <div className="take-name">今天</div>
         </div>
         <div className="opt-right">
@@ -24,11 +29,14 @@ export default function TaskListWrapper() {
         <div className="task-item">
           <div className="task-item-wrapper">
             <div className="task-prefix">
-              <div className="check-box"></div>
+              <CheckBox status="finish" clickTrigger={checkClick} />
             </div>
             <div className="task-body">
               <div className="task-content">任务内容</div>
-              <div className="task-msg">10月10日</div>
+              <div className="task-msg">
+                {/* <Tag /> */}
+                10月10日
+              </div>
             </div>
           </div>
           <div className="task-suffix">
@@ -38,7 +46,7 @@ export default function TaskListWrapper() {
         <div className="task-item">
           <div className="task-item-wrapper">
             <div className="task-prefix">
-              <div className="check-box-error"></div>
+              <CheckBox status="cancel" clickTrigger={checkClick} />
             </div>
             <div className="task-body">
               <div className="task-content">任务内容</div>

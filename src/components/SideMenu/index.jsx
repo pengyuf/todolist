@@ -15,11 +15,25 @@ export default function SideMenu({ showSideMenu }) {
 
   const defaultMenus = [
     {
+      label: "所有",
+      value: "all",
+      nums: 0,
+      icon: "icon-today",
+      path: "all",
+    },
+    {
       label: "今天",
       value: "today",
       nums: 0,
       icon: "icon-today",
       path: "today",
+    },
+    {
+      label: "明天",
+      value: "tomorrow",
+      nums: 0,
+      icon: "icon-today",
+      path: "tomorrow",
     },
     {
       label: "最近7天",
@@ -34,6 +48,13 @@ export default function SideMenu({ showSideMenu }) {
       nums: 0,
       icon: "icon-inbox",
       path: "inbox",
+    },
+    {
+      label: "摘要",
+      value: "summary",
+      nums: 0,
+      icon: "icon-inbox",
+      path: "summary",
     },
   ];
 
@@ -54,7 +75,7 @@ export default function SideMenu({ showSideMenu }) {
     },
   ];
 
-  const envelopeMenus = [
+  const tagMenus = [
     {
       label: "标签1",
       value: "e1",
@@ -181,10 +202,10 @@ export default function SideMenu({ showSideMenu }) {
         {/* 标签 */}
         <div className="card-title">标签</div>
         <div className="card-body">
-          {envelopeMenus.map((item) => (
+          {tagMenus.map((item) => (
             <div key={item.value} onContextMenu={(e) => mouseRightClick(e)}>
               <NavLink
-                to={`envelope/${item.value}`}
+                to={`tag/${item.value}`}
                 className={({ isActive }) =>
                   isActive ? "menu-item active-menu" : "menu-item"
                 }
@@ -207,7 +228,7 @@ export default function SideMenu({ showSideMenu }) {
           {statusMenus.map((item) => (
             <div key={item.value} onContextMenu={(e) => mouseRightClick(e)}>
               <NavLink
-                to={`envelope/${item.value}`}
+                to={`status/${item.value}`}
                 className={({ isActive }) =>
                   isActive ? "menu-item active-menu" : "menu-item"
                 }

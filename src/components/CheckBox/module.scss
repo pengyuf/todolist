@@ -1,0 +1,74 @@
+@import '@/styles/index';
+
+.check-box {
+    border: 1px solid rgba($color: $t-grey, $alpha: 0.3);
+    background-color: transparent;
+    border-radius: 2px;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    position: relative;
+}
+
+.check-box-finish {
+    border: 1px solid rgba($color: $t-grey, $alpha: 0.3);
+    background-color: rgba($color: $t-grey, $alpha: 0.3);
+    border-radius: 2px;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -5px;
+        margin-top: -4px;
+        width: 8px;
+        height: 4px;
+        border-left: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        background-color: transparent;
+        transform: rotate(-45deg);
+    }
+}
+
+.check-box-cancel {
+    border-radius: 2px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgba($color: $t-grey, $alpha: 0.3);
+    ;
+    background-color: rgba($color: $t-grey, $alpha: 0.3);
+    ;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 10px;
+        width: 2px;
+        top: 50%;
+        left: 50%;
+        margin-top: -5px;
+        margin-left: -1px;
+        background: #fff;
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 10px;
+        width: 2px;
+        top: 50%;
+        left: 50%;
+        margin-top: -5px;
+        margin-left: -1px;
+        background: #fff;
+        transform: rotate(-45deg);
+    }
+}

@@ -1,0 +1,9 @@
+.progress-circle {
+    transform: rotate(-90deg);
+}
+
+.progress-circle>circle {
+    fill: none;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.4s linear, stroke .3s;
+}

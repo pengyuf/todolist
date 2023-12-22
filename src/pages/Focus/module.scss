@@ -1,0 +1,169 @@
+@import '@/styles/index';
+
+.focus-wrapper {
+    display: flex;
+    height: 100%;
+
+    .focus-opt-wrapper {
+        padding: 20px;
+        box-sizing: border-box;
+        border-right: 1px solid rgba($color: $t-grey, $alpha: 0.1);
+        width: 58%;
+        display: flex;
+        flex-direction: column;
+
+        .focus-opt-header {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .focus-title {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .focus-time-tab {
+                display: flex;
+
+                .time-tab-item {
+                    background-color: rgba($color: $t-grey, $alpha: 0.05);
+                    color: rgba($color: $t-grey, $alpha: 0.4);
+                    padding: 0 10px;
+                    box-sizing: border-box;
+                    border-radius: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                    margin-right: 10px;
+                }
+
+                .active-time-tab-item {
+                    color: $t-primary;
+                    background-color: rgba($color: $t-primary, $alpha: 0.05);
+                }
+            }
+
+            .focus-opt-box {}
+        }
+
+        .focus-opt-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px 0;
+            box-sizing: border-box;
+
+            .focus-opt-body-title {
+                color: rgba($color: $t-grey, $alpha: 0.4);
+                position: relative;
+                flex: 1;
+                cursor: pointer;
+            }
+
+            .tomato-img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .complete-text {
+                margin: 20px 0;
+                font-size: 20px;
+            }
+
+            .focus-timer-box {
+                margin: 100px 0;
+                width: 360px;
+                height: 360px;
+                line-height: 360px;
+                text-align: center;
+                position: relative;
+                cursor: pointer;
+
+                .timer-progress {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+
+                .cur-time-box {
+                    position: relative;
+                    font-size: 50px;
+                }
+            }
+
+            .focus-timer-btn-box {
+                flex: 1;
+                position: relative;
+
+                .focus-timer-btn {
+                    height: 45px;
+                    line-height: 45px;
+                    border-radius: 45px;
+                    width: 150px;
+                    text-align: center;
+                    box-sizing: border-box;
+                    cursor: pointer;
+                    margin-bottom: 10px;
+
+                    &:last-child {
+                        margin-bottom: 0px;
+                    }
+                }
+
+                .focus-timer-btn-0 {
+                    background-color: $t-primary;
+                    color: #fff;
+                }
+
+                .focus-timer-btn-1 {
+                    border: 1px solid $t-primary;
+                    color: $t-primary;
+                }
+            }
+        }
+    }
+
+    .focus-record-wrapper {
+        padding: 20px;
+        box-sizing: border-box;
+        flex: 1;
+
+        .focus-record-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .focus-stat-box {
+            margin-bottom: 30px;
+            .focus-stat-body {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .focus-stat-item {
+                    width: 49%;
+                    background: rgba($color: $t-grey, $alpha: 0.03);
+                    padding: 10px;
+                    box-sizing: border-box;
+                    margin-bottom: 10px;
+                    border-radius: 10px;
+
+                    .stat-item-title {
+                        margin-bottom: 10px;
+                        color: rgba($color: $t-grey, $alpha: 0.4);
+                    }
+
+                    .stat-item-value{
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .focus-record-box {}
+    }
+}

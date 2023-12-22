@@ -1,0 +1,79 @@
+@import '@/styles/index';
+
+.quadrant-wrapper {
+    background-color: rgb(249, 249, 249);
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    .quadrant-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        .quadrant-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .quadrant-header-opt {
+            cursor: pointer;
+        }
+    }
+
+    .quadrant-body {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .quadrant-item {
+            width: 49.6%;
+            height: 49%;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+
+            .quadrant-item-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+
+                .quadrant-item-title {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .iconfont {
+                        margin-right: 10px;
+                    }
+
+                    .quadrant-item-title-value-4 {
+                        color: $priority-4;
+                    }
+
+                    .quadrant-item-title-value-3 {
+                        color: $priority-3;
+                    }
+
+                    .quadrant-item-title-value-2 {
+                        color: $priority-2;
+                    }
+
+                    .quadrant-item-title-value-1 {
+                        color: $priority-1;
+                    }
+                }
+
+                .quadrant-item-header-opt {}
+            }
+
+            .quadrant-item-body {}
+        }
+    }
+}

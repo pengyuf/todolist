@@ -1,0 +1,17 @@
+@import '@/styles/index';
+
+.task-root-wrapper {
+    display: flex;
+    height: 100%;
+
+    .task-root-list {
+        padding: 20px 10px;
+        box-sizing: border-box;
+        width: 55%;
+        border-right: 1px solid rgba($color: $t-grey, $alpha: 0.1);
+    }
+
+    .task-root-textarea {
+        flex: 1;
+    }
+}
