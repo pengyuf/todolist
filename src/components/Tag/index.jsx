@@ -1,5 +1,5 @@
 import "./module.scss";
 
-export default function Tag({ conent, bgColor }) {
-  return <div className="tag-item">标签1</div>;
+export default function Tag({ content, bgColor = 'blue' }) {
+  return <div className="tag-item" style={{backgroundColor:bgColor}}>{content}</div>;
 }

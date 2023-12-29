@@ -83,6 +83,13 @@
       "unicode_decimal": 59291
     },
     {
+      "icon_id": "38706037",
+      "name": "下",
+      "font_class": "arrow-left",
+      "unicode": "e79c",
+      "unicode_decimal": 59292
+    },
+    {
       "icon_id": "7450639",
       "name": "收缩",
       "font_class": "shousuo",

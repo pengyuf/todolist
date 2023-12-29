@@ -1,9 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import "./module.scss";
 import { Tooltip, ConfigProvider } from "antd";
-import SideMenu from "@/components/SideMenu";
 import { useState } from "react";
-import TextareaWrapper from "@/components/TextareaWrapper";
 
 export default function Home() {
   const [showSideMenu, setShowSideMenu] = useState(true);

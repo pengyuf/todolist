@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4361819 */
-  src: url('iconfont.woff2?t=1703218221041') format('woff2'),
-       url('iconfont.woff?t=1703218221041') format('woff'),
-       url('iconfont.ttf?t=1703218221041') format('truetype');
+  src: url('iconfont.woff2?t=1703490470642') format('woff2'),
+       url('iconfont.woff?t=1703490470642') format('woff'),
+       url('iconfont.ttf?t=1703490470642') format('truetype');
 }
 
 .iconfont {
@@ -55,6 +55,10 @@
 
 .icon-arrow-right:before {
   content: "\e79b";
+}
+
+.icon-arrow-left:before {
+  content: "\e79c";
 }
 
 .icon-shousuo:before {

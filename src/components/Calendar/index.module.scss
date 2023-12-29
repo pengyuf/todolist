@@ -1,0 +1,72 @@
+@import '@/styles/index';
+
+$item-width: 14%;
+
+.calendarWrapper {
+    padding: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    .optBox {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        .arrowBtn {
+            height: 30px;
+            width: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 5px;
+            color: rgba($color: $t-grey, $alpha: 0.4);
+
+            &:hover {
+                background-color: rgba($color: $t-grey, $alpha: 0.05);
+            }
+        }
+
+        .optLeft {}
+
+        .monthTitle {}
+
+        .optRight {}
+    }
+
+    .weekBox {
+        display: flex;
+        margin-bottom: 20px;
+
+        .weekItem {
+            width: $item-width;
+            text-align: center;
+        }
+    }
+
+    .contentBox {
+        display: flex;
+        flex-wrap: wrap;
+
+        .dayItemBox {
+            width: $item-width;
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+
+            .dayItem {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                border-radius: 50%;
+            }
+
+            .activeDayItem {
+                background-color: $t-primary;
+                color: #fff;
+            }
+        }
+
+
+    }
+}
