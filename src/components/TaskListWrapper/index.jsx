@@ -1,8 +1,26 @@
-import CheckBox from "../CheckBox";
-import Tag from "../Tag";
+import { useOutletContext } from "react-router-dom";
+import TCheckBox from "../TCheckBox";
 import "./module.scss";
+import { Popover } from "antd";
+import { useState } from "react";
 
-export default function TaskListWrapper() {
+export default function TaskListWrapper({ listTitle }) {
+  const [showSideMenu, setShowSideMenu] = useOutletContext();
+  const sideClick = () => setShowSideMenu((c) => !c);
+
+  const hoverContent = (
+    <div>
+      <div>asdf</div>
+      <div>iojiji</div>
+    </div>
+  );
+
+  const [hovered, setHovered] = useState(false);
+
+  const handleHoverChange = (open) => {
+    setHovered(open);
+  };
+
   function checkClick(status) {
     console.log("checkClick", status);
   }
@@ -11,11 +29,27 @@ export default function TaskListWrapper() {
     <div className="task-list-wrapper">
       <div className="opt-box">
         <div className="opt-left">
-          <div className="take-name">今天</div>
+          <div
+            className={`iconfont ${
+              showSideMenu ? "icon-shousuo" : "icon-open"
+            } left-icon`}
+            onClick={sideClick}
+          ></div>
+          <div className="take-name">{listTitle}</div>
         </div>
         <div className="opt-right">
-          <div className="iconfont icon-opt right-icon"></div>
-          <div className="iconfont icon-opt right-icon"></div>
+          <div className="iconfont icon-paixu right-icon"></div>
+          <Popover
+            style={{
+              width: 500,
+            }}
+            content={hoverContent}
+            trigger="hover"
+            open={hovered}
+            onOpenChange={handleHoverChange}
+          >
+            <div className="iconfont icon-opt right-icon"></div>
+          </Popover>
         </div>
       </div>
       <div className="input-box">
@@ -29,7 +63,7 @@ export default function TaskListWrapper() {
         <div className="task-item">
           <div className="task-item-wrapper">
             <div className="task-prefix">
-              <CheckBox status="finish" clickTrigger={checkClick} />
+              <TCheckBox status="finish" clickTrigger={checkClick} />
             </div>
             <div className="task-body">
               <div className="task-content">任务内容</div>
@@ -46,7 +80,7 @@ export default function TaskListWrapper() {
         <div className="task-item">
           <div className="task-item-wrapper">
             <div className="task-prefix">
-              <CheckBox status="cancel" clickTrigger={checkClick} />
+              <TCheckBox status="cancel" clickTrigger={checkClick} />
             </div>
             <div className="task-body">
               <div className="task-content">任务内容</div>

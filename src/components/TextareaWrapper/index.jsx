@@ -1,4 +1,4 @@
-import CheckBox from "../CheckBox";
+import TCheckBox from "../TCheckBox";
 import "./module.scss";
 import { Tooltip } from "antd";
 
@@ -8,7 +8,7 @@ export default function TextareaWrapper() {
       <div className="textarea-header">
         <div className="header-left">
           <div className="header-check-box">
-            <CheckBox />
+            <TCheckBox />
           </div>
           <div className="header-time-box">7天后，12月17日</div>
         </div>

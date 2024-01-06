@@ -1,7 +1,7 @@
 @import '@/styles/index';
 
-.check-box {
-    border: 1px solid rgba($color: $t-grey, $alpha: 0.3);
+.check_box {
+    border: 1px solid #D1D1D1;
     background-color: transparent;
     border-radius: 2px;
     width: 14px;
@@ -10,9 +10,9 @@
     position: relative;
 }
 
-.check-box-finish {
-    border: 1px solid rgba($color: $t-grey, $alpha: 0.3);
-    background-color: rgba($color: $t-grey, $alpha: 0.3);
+.check_box_finish {
+    border: 1px solid #D1D1D1;
+    background-color: #D1D1D1;
     border-radius: 2px;
     width: 14px;
     height: 14px;
@@ -35,13 +35,13 @@
     }
 }
 
-.check-box-cancel {
+.check_box_cancel {
     border-radius: 2px;
     width: 14px;
     height: 14px;
-    border: 1px solid rgba($color: $t-grey, $alpha: 0.3);
+    border: 1px solid #D1D1D1;
     ;
-    background-color: rgba($color: $t-grey, $alpha: 0.3);
+    background-color: #D1D1D1;
     ;
     position: relative;
     cursor: pointer;

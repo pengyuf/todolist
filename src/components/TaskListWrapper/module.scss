@@ -11,8 +11,9 @@
             align-items: center;
 
             .left-icon {
-                color: rgba($color: $t-grey, $alpha: 0.5);
+                color: rgba($color: $t-grey, $alpha: 0.8);
                 cursor: pointer;
+                font-size: 20px;
             }
 
             .take-name {
@@ -27,9 +28,10 @@
             align-items: center;
 
             .right-icon {
-                color: rgba($color: $t-grey, $alpha: 0.5);
-                margin-left: 5px;
+                color: rgba($color: $t-grey, $alpha: 0.8);
+                margin-left: 10px;
                 cursor: pointer;
+                font-size: 18px;
             }
         }
     }

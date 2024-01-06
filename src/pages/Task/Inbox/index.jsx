@@ -6,7 +6,7 @@ export default function Inbox() {
   return (
     <div className="task-root-wrapper">
       <div className="task-root-list">
-        <TaskListWrapper />
+        <TaskListWrapper listTitle="收集箱" />
       </div>
       <div className="task-root-textarea">
         <TextareaWrapper />

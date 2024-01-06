@@ -8,15 +8,15 @@ export default function Home() {
 
   const sideList = [
     { label: "任务", icon: "icon-task", value: "task", path: "/task" },
-    { label: "日历", icon: "icon-task", value: "calendar", path: "/calendar" },
+    { label: "日历", icon: "icon-rili", value: "calendar", path: "/calendar" },
     {
       label: "四象限",
-      icon: "icon-task",
+      icon: "icon-quadrant",
       value: "quadrant",
       path: "/quadrant",
     },
-    { label: "专注", icon: "icon-task", value: "focus", path: "/focus" },
-    { label: "打卡", icon: "icon-task", value: "clockIn", path: "/clockIn" },
+    { label: "专注", icon: "icon-zhuanzhu", value: "focus", path: "/focus" },
+    { label: "打卡", icon: "icon-daqia", value: "clockIn", path: "/clockIn" },
   ];
 
   const sideItems = sideList.map((item) => (

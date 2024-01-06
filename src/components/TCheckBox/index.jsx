@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./module.scss";
+import style from "./index.module.scss";
 
 export default function CheckBox({ clickTrigger, status = "" }) {
   const [curClass, SetCurClass] = useState("");
@@ -9,16 +9,16 @@ export default function CheckBox({ clickTrigger, status = "" }) {
       SetCurClass("");
     }
     if (status == "finish") {
-      SetCurClass("check-box-finish");
+      SetCurClass(style.check_box_finish);
     }
     if (status == "cancel") {
-      SetCurClass("check-box-cancel");
+      SetCurClass(style.check_box_cancel);
     }
   }, [status]);
 
   return (
     <div
-      className={`check-box ${curClass}`}
+      className={`${style.check_box} ${curClass}`}
       onClick={() => clickTrigger(status)}
     ></div>
   );

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./module.scss";
+import style_T from "./index.module.scss";
 
 export default function Popover({ children, visible, top, left }) {
   const [style, setStyle] = useState({
@@ -14,10 +14,10 @@ export default function Popover({ children, visible, top, left }) {
     nextStyle.top = top + "px";
     nextStyle.left = left + "px";
     setStyle(nextStyle);
-  }, [visible,top,left]);
+  }, [visible, top, left]);
 
   return visible ? (
-    <div className="popover" style={style}>
+    <div className={style_T.popover} style={style}>
       {children}
     </div>
   ) : (

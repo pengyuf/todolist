@@ -6,7 +6,7 @@ export default function AllList() {
   return (
     <div className="task-root-wrapper">
       <div className="task-root-list">
-        <TaskListWrapper />
+        <TaskListWrapper listTitle="所有" />
       </div>
       <div className="task-root-textarea">
         <TextareaWrapper />
